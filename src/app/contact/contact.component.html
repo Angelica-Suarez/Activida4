@@ -1,0 +1,7 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required [(ngModel)]="name" #nameInput="ngModel">
+    <div *ngIf="nameInput.invalid && nameInput.touched" style="color: red;">El nombre es obligatorio</div>
+  
+    <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+  </form>
